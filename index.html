@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070b">
+<title>For Amna, My Moon 🌙</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --black: #08070b;
+  --gold: #e9c777;
+  --light: #fff4d9;
+  --muted: #b6a98d;
+  --panel: rgba(255, 255, 255, .045);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--light);
+  background:
+    radial-gradient(ellipse at 50% 0%, #33220f 0%, transparent 48%),
+    var(--black);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+nav {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+nav span { opacity: .55; }
+
+section {
+  width: min(100% - 32px, 760px);
+  margin: auto;
+  padding: 76px 0;
+}
+
+.hero {
+  min-height: 88svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 4px;
+  line-height: 1.9;
+}
+
+.moon {
+  width: 112px;
+  height: 112px;
+  margin: 32px 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 35% 32%, #fffde9, #f6d88c 35%, #b87c31 75%, #4d2c11);
+  box-shadow: 0 0 30px #e9c77755, 0 0 95px #e9c77725;
+  animation: float 4s ease-in-out infinite;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: #100b0b;
+  top: -13px;
+  right: -20px;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(58px, 15vw, 110px);
+  line-height: .92;
+  margin: 0;
+  letter-spacing: -3px;
+  background: linear-gradient(110deg, #fff4cf, #d6a746, #fff4d9, #b88935);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 20px #d8aa4230);
+}
+
+.subtitle {
+  max-width: 350px;
+  margin: 24px auto 0;
+  color: var(--muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+button, .button {
+  appearance: none;
+  border: 1px solid #e9c77770;
+  border-radius: 999px;
+  padding: 15px 24px;
+  background: linear-gradient(135deg, #f4d995, #c18c34);
+  color: #17100a;
+  font: 700 12px 'DM Sans', sans-serif;
+  letter-spacing: .7px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  min-height: 48px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 35px #e9c77730;
+}
+
+.hero button { margin-top: 32px; }
+
+.tiny {
+  margin-top: 16px;
+  font-size: 11px;
+  color: #8c816e;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: clamp(37px, 9vw, 57px);
+  line-height: 1.05;
+  margin: 18px 0;
+}
+
+.section-heading em {
+  color: var(--gold);
+}
+
+.description {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.card {
+  margin-top: 28px;
+  padding: clamp(23px, 6vw, 38px);
+  border: 1px solid #e9c77725;
+  background: linear-gradient(145deg, #ffffff0b, #ffffff02);
+  border-radius: 24px;
+  box-shadow: 0 15px 60px #0004, inset 0 1px #ffffff08;
+}
+
+.late-note {
+  border-color: #e9c77755;
+  background: linear-gradient(135deg, #281b12, #110e0e);
+}
+
+.card h3 {
+  font-size: 33px;
+  color: var(--gold);
+  margin: 0 0 14px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 2;
+  color: #d6cbb5;
+  margin: 0 0 14px;
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cat {
+  border: 1px solid #e9c77725;
+  background: var(--panel);
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px 10px;
+  min-width: 0;
+  transition: transform .25s, border-color .25s;
+}
+
+.cat:active { transform: scale(.97); }
+
+.cat .face {
+  display: block;
+  font-size: 44px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px #e9c77725);
+}
+
+.cat strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.cat p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+.timeline {
+  border-left: 1px solid #e9c77755;
+  margin: 32px 0 0 9px;
+  padding-left: 25px;
+}
+
+.moment {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.moment:last-child { padding-bottom: 0; }
+
+.moment::before {
+  content: "✦";
+  position: absolute;
+  left: -32px;
+  color: var(--gold);
+  background: var(--black);
+  padding: 2px 0;
+}
+
+.moment h3 {
+  color: var(--gold);
+  font-size: 27px;
+  margin: 0 0 5px;
+}
+
+.moment p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.letter {
+  position: relative;
+  overflow: hidden;
+}
+
+.letter::before {
+  content: "♡";
+  position: absolute;
+  top: -25px;
+  right: 8px;
+  font-size: 110px;
+  color: #e9c77709;
+}
+
+.letter-content { position: relative; }
+
+.signature {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  font-style: italic;
+  margin-top: 24px;
+}
+
+.surprise {
+  text-align: center;
+  padding: 30px 20px;
+  border: 1px solid #e9c77745;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at top, #51381945, transparent 70%);
+}
+
+#secret {
+  display: none;
+  margin-top: 24px;
+  color: #f9e7b8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  line-height: 1.6;
+  animation: appear .8s ease both;
+}
+
+#secret.show { display: block; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  padding: 30px 20px 45px;
+  text-align: center;
+  color: #94846b;
+  font-size: 11px;
+  line-height: 2.1;
+}
+
+footer .heart { color: var(--gold); }
+
+#floaties {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floater {
+  position: absolute;
+  bottom: -30px;
+  animation: rise 4s ease-out forwards;
+  filter: drop-shadow(0 0 8px #e9c77766);
+}
+
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+@media (min-width: 600px) {
+  section { padding: 100px 0; }
+  .cat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .moon { width: 130px; height: 130px; }
+  .moon::after { width: 122px; height: 122px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div id="floaties" aria-hidden="true"></div>
+
+<nav>✦ A LITTLE UNIVERSE FOR AMNA ✦</nav>
+
+<main>
+  <section class="hero" id="home">
+    <div class="eyebrow">✧ to the girl who owns my heart ✧</div>
+    <div class="moon" aria-label="A glowing golden moon"></div>
+    <h1>Happy Birthday,<br>Amna.</h1>
+    <p class="subtitle">
+      To my moon, my favorite person,<br>
+      and my sweetest little universe. 🌙
+    </p>
+    <button onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">
+      Open your little universe ♡
+    </button>
+    <div class="tiny">made with all my love, just for you</div>
+  </section>
+
+  <section id="apology">
+    <div class="eyebrow" style="text-align:center">before anything else...</div>
+    <h2 class="section-heading">A tiny apology,<br><em>my love.</em></h2>
+    <div class="card late-note">
+      <h3>I'm sorry I'm late, baby. 🥺</h3>
+      <p>
+        My pretty girl, I'm so sorry this birthday wish is arriving
+        a little late. My phone got taken away, and I couldn't wish
+        you the way I wanted to, when I wanted to.
+      </p>
+      <p>
+        Please know that being late with a message doesn't mean you
+        were ever late in my thoughts. You deserve the sweetest wishes,
+        the biggest hugs, and all the love in this universe.
+      </p>
+      <p>
+        So here's a little corner of the internet, made just for you.
+        I couldn't let your special day pass without giving you
+        something from my heart. Forgive me, my moon? 🌙
+      </p>
+      <p style="color:var(--gold)">P.S. You can confiscate my phone back
+      from me after accepting this apology. ♡</p>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="eyebrow" style="text-align:center">important announcement</div>
+    <h2 class="section-heading">The council of<br><em>little cats</em> 🐈</h2>
+    <p class="description">
+      An emergency meeting was held to determine who the cutest
+      girl in the entire universe is. The verdict is unanimous.
+    </p>
+    <div class="cat-grid">
+      <div class="cat">
+        <span class="face">🐈‍⬛</span>
+        <strong>President</strong>
+        <p>Amna is the prettiest girl ever.</p>
+      </div>
+      <div class="cat">
+        <span class="face">🐱</span>
+        <strong>Vice President</strong>
+        <p>Her smile fixes everything.</p>
+      </div>
+      <div class="cat">
+        <span class="face">😽</span>
+        <strong>Love Officer</strong>
+        <p>Mandatory daily affection.</p>
+      </div>
+      <div class="cat">
+        <span class="face">😻</span>
+        <strong>Security</strong>
+        <p>Protect Amna at all costs.</p>
+      </div>
+    </div>
+    <p class="description" style="margin-top:25px">
+      Official cat-council rule: Amna must be kissed on the forehead,
+      reminded that she's loved, and given unlimited virtual kittens.
+    </p>
+  </section>
+
+  <section id="us">
+    <div class="eyebrow" style="text-align:center">our little story</div>
+    <h2 class="section-heading">Almost a year<br>of <em>you & me.</em></h2>
+    <p class="description">
+      Nearly twelve months of having someone who makes ordinary
+      days feel like the most beautiful scenes in a love story.
+      And somehow, I'd still choose you all over again.
+    </p>
+
+    <div class="timeline">
+      <div class="moment">
+        <h3>The beginning ✨</h3>
+        <p>
+          Somewhere along the way, you became more than just a person
+          in my life. You became someone I look forward to, someone
+          I think about, someone who makes my heart feel different.
+        </p>
+      </div>
+      <div class="moment">
+        <h3>The little things ♡</h3>
+        <p>
+          The conversations, the laughter, the silly moments, the
+          things only we understand. Those little pieces of us are
+          the things I want to keep close to my heart.
+        </p>
+      </div>
+      <div class="moment">
+        <h3>Growing together 🌷</h3>
+        <p>
+          We're not perfect, and we don't need to be. I want us to
+          keep learning each other, communicating, forgiving, laughing,
+          and choosing kindness even on the difficult days.
+        </p>
+      </div>
+      <div class="moment">
+        <h3>Almost our first anniversary 🌙</h3>
+        <p>
+          We're getting closer to one whole year together, and the
+          thought makes me so happy. I hope we keep making memories
+          that our future selves will smile about.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="eyebrow" style="text-align:center">sealed with a million kisses</div>
+    <h2 class="section-heading">A letter for<br><em>my moon.</em></h2>
+
+    <div class="card letter">
+      <div class="letter-content">
+        <h3>My dearest Amna, 💌</h3>
+        <p>
+          Happy birthday to the girl who has a very special place
+          in my heart. If I could give you one thing in this world,
+          I would give you the ability to see yourself through my eyes,
+          even for just a moment.
+        </p>
+        <p>
+          You would see someone precious. Someone whose existence
+          can make a day feel softer. Someone worth celebrating,
+          not only on her birthday, but on all the completely ordinary
+          days in between.
+        </p>
+        <p>
+          These almost twelve months with you mean so much to me.
+          I cherish the time we've shared, the things we've learned
+          about each other, and the little moments that have become
+          part of our story.
+        </p>
+        <p>
+          I can't promise that every day will be perfect, but I want
+          to keep trying to be someone who listens to you, respects
+          you, makes you laugh, and reminds you that your feelings
+          matter. I want to celebrate your wins and sit beside you
+          when life feels heavy.
+        </p>
+        <p>
+          And my moon, please never think that you have to be happy
+          every second to be loved. You deserve tenderness on your
+          hardest days, patience when things are difficult, and
+          happiness that belongs entirely to you.
+        </p>
+        <p>
+          The sky has billions of stars, but when I think of the moon,
+          I think of you. Not because you have to light up every dark
+          moment, but because there's something about you that feels
+          special to me in a way I can't quite put into words.
+        </p>
+        <p>
+          Happy birthday, my pretty girl. May this new chapter bring
+          you peace, health, beautiful surprises, fulfilled dreams,
+          and a thousand reasons to smile. I hope you always remember
+          how worthy you are of love and good things.
+        </p>
+        <p>
+          Thank you for being part of my life and for sharing this
+          little journey with me. Here's to the memories we've made,
+          the ones we're still making, and the beautiful days ahead.
+        </p>
+        <p>
+          I love our little world, Amna. And I'm so happy you're in it.
+        </p>
+        <div class="signature">Forever your moon admirer, ♡</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="surprise">
+    <div class="surprise">
+      <div style="font-size:48px;margin-bottom:12px">🎁</div>
+      <div class="eyebrow">one last little thing</div>
+      <h2 class="section-heading" style="font-size:42px">
+        A secret, just for you.
+      </h2>
+      <p class="description" style="margin-bottom:24px">
+        There's one more tiny message waiting for you, birthday girl.
+      </p>
+      <button id="reveal" onclick="revealSecret()">
+        Open my last surprise ♡
+      </button>
+      <div id="secret">
+        If I had a sky of my own, I'd put your name beside the moon.
+        If I had a million lives, I'd hope to meet you in every one.
+        And if I could make one birthday wish for myself today,
+        it would be that life is always gentle with you. 🌙
+        <br><br>
+        <span style="color:#e9c777">Happy birthday, my Amna. I adore you. 🐈‍⬛</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="font-size:24px;color:#e9c777;margin-bottom:10px">☾ ✧ ⋆</div>
+  made for AMNA, with a whole heart full of love<br>
+  <span class="heart">♥</span> one moon, two hearts, our little universe
+  <br><span style="opacity:.55">P.S. the cats approve of us.</span>
+</footer>
+
+<script>
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+let stars = [];
+let w = 0, h = 0;
+let dpr = 1;
+
+function makeStars() {
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  w = window.innerWidth;
+  h = window.innerHeight;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  stars = Array.from(
+    {length: Math.min(140, Math.floor(w * h / 6500))},
+    () => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.5 + .25,
+      a: Math.random(),
+      speed: Math.random() * .015 + .003
+    })
+  );
+}
+
+let frame = 0;
+function drawStars() {
+  ctx.clearRect(0, 0, w, h);
+  stars.forEach(s => {
+    s.a += s.speed;
+    const opacity = .25 + (Math.sin(s.a) + 1) * .35;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,222,151,${opacity})`;
+    ctx.fill();
+  });
+  frame = requestAnimationFrame(drawStars);
+}
+
+makeStars();
+drawStars();
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(makeStars, 120);
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) cancelAnimationFrame(frame);
+  else drawStars();
+});
+
+function revealSecret() {
+  const secret = document.getElementById('secret');
+  secret.classList.add('show');
+  document.getElementById('reveal').textContent = 'Surprise opened! ♡';
+  document.getElementById('reveal').disabled = true;
+  burstHearts();
+}
+
+function burstHearts() {
+  const container = document.getElementById('floaties');
+  const symbols = ['💛', '♡', '🐈', '✨', '🌙', '💖'];
+
+  for (let i = 0; i < 22; i++) {
+    const el = document.createElement('span');
+    el.className = 'floater';
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + '%';
+    el.style.fontSize = (16 + Math.random() * 18) + 'px';
+    el.style.animationDuration = (3 + Math.random() * 2) + 's';
+    container.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+}
+</script>
+</body>
+</html>
